@@ -2,7 +2,9 @@
 <p>Gold Count</p>
 {{myGoldCount}}
 
-<app-building [core]='myCore' (addGold)='dataFromChild($event)' (addbldg)='bldgNameFromChild($event)'></app-building>
+<!-- <app-building [core]='myCore' (addGold)='dataFromChild($event)' (addbldg)='bldgNameFromChild($event)'></app-building> -->
+<!-- <app-building [core]='myCore' (addData) = 'dataFromBldg($event)' (addGold)='dataFromChild($event)'></app-building> -->
+<app-building [core]='myCore' (addData) = 'dataFromBldg($event)' ></app-building>
 <app-history [history] = 'myHistory'></app-history>
 
 

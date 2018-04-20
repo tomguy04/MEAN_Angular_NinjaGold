@@ -15,23 +15,29 @@ export class AppComponent implements OnInit{
   myGoldCount:number;
   myHistory:Array<Building>;
   goldEvent:number;
+  building = new Building();
 
   //building values to pass down to the building component
   myCore:coreBuilding;
 
+
   constructor(private _dataService:DataService) { }
 
-  dataFromChild_old(incomingGoldEvent:Building){
-    console.log(`from the emit ${incomingGoldEvent}`);
-    this.goldEvent = incomingGoldEvent.gold;
-    this._dataService.addGold(incomingGoldEvent);
+  // dataFromChild_old(incomingGoldEvent:Building){
+  //   console.log(`from the emit ${incomingGoldEvent}`);
+  //   this.goldEvent = incomingGoldEvent.gold;
+  //   this._dataService.addGold(incomingGoldEvent);
+  // }
+
+  dataFromBldg(bldgName:String){
+    this._dataService.addGoldNew(bldgName);
   }
 
-  dataFromChild(incomingGoldEvent:Building){
-    console.log(`from the emit ${incomingGoldEvent}`);
-    // this.goldEvent = incomingGoldEvent.gold;
-    this._dataService.addGold(incomingGoldEvent);
-  }
+  // dataFromChild(incomingGoldEvent:Building){
+  //   console.log(`from the emit ${incomingGoldEvent}`);
+  //   // this.goldEvent = incomingGoldEvent.gold;
+  //   this._dataService.addGold(incomingGoldEvent);
+  // }
 
   // bldgNameFromChild(incomingBuildingEvent:string){
   //   this._dataService.addBldg(incomingBuildingEvent);
